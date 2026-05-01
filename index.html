@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Generator</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background: #22c55e;
+      color: white;
+      cursor: pointer;
+    }
+    img, video {
+      margin-top: 20px;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🔥 AI Generator</h1>
+
+<input type="text" id="prompt" placeholder="Enter your prompt...">
+
+<br>
+
+<select id="type">
+  <option value="image">Text → Image</option>
+  <option value="video">Text → Video</option>
+</select>
+
+<select id="motion">
+  <option value="none">No Motion</option>
+  <option value="zoom">Zoom</option>
+  <option value="pan">Pan</option>
+  <option value="rotate">Rotate</option>
+</select>
+
+<br>
+
+<button onclick="generate()">Generate</button>
+
+<br>
+
+<img id="outputImg" style="display:none;">
+<video id="outputVideo" controls style="display:none;"></video>
+
+<script>
+function generate() {
+  let prompt = document.getElementById("prompt").value;
+  let type = document.getElementById("type").value;
+  let motion = document.getElementById("motion").value;
+
+  alert("Demo hai 😄\nPrompt: " + prompt + "\nType: " + type + "\nMotion: " + motion);
+
+  // Demo output (fake for now)
+  if(type === "image"){
+    document.getElementById("outputImg").style.display = "block";
+    document.getElementById("outputImg").src = "https://via.placeholder.com/300?text=AI+Image";
+    document.getElementById("outputVideo").style.display = "none";
+  } else {
+    document.getElementById("outputVideo").style.display = "block";
+    document.getElementById("outputVideo").src = "https://www.w3schools.com/html/mov_bbb.mp4";
+    document.getElementById("outputImg").style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
